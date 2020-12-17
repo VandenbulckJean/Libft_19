@@ -2,11 +2,15 @@ SRCS	= ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memmove.c ft_memchr.c 
 
 BSRCS	= ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c
 
+ESRCS	= bonus_get_next_line.c bonus_isnumber.c bonus_putstr.c bonus_strjoin_front.c bonus_strjoin_back.c bonus_newlinefound.c bonus_ft_printf/conversion_c.c bonus_ft_printf/conversion_di_2.c bonus_ft_printf/conversion_di.c bonus_ft_printf/conversion_p.c bonus_ft_printf/conversion_percent.c bonus_ft_printf/conversion_s.c bonus_ft_printf/conversion_uxx.c bonus_ft_printf/parsing.c bonus_ft_printf/printf_conversion_utils.c bonus_ft_printf/printf_flag_utils.c bonus_ft_printf/printf_utils_2.c bonus_ft_printf/printf.c
+
 HEADER	= includes
 
 OBJS	= ${SRCS:.c=.o}
 
 BOBJS	= ${SRCS:.c=.o} ${BSRCS:.c=.o}
+
+EOBJS	= ${SRCS:.c=.o} ${BSRCS:.c=.o} ${ESRCS:.c=.o}
 
 NAME	= libft.a
 
@@ -22,12 +26,15 @@ $(NAME):	${OBJS}
 	ar rc ${NAME} ${OBJS}
 
 clean:	
-	${RM}	${OBJS} ${BOBJS}
+	${RM}	${OBJS} ${BOBJS} ${EOBJS}
 
 fclean:	clean
 	${RM} ${NAME}
 
 bonus:	${BOBJS}
 	ar rc ${NAME} ${BOBJS}
+
+extra:	${EOBJS}
+	ar rc ${NAME} ${EOBJS}
 
 re:	fclean all
