@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   bonus_get_next_line.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jvanden- <jvanden-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jvanden- <jvanden-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/06 13:24:54 by jvanden-          #+#    #+#             */
-/*   Updated: 2020/12/17 18:07:20 by jvanden-         ###   ########.fr       */
+/*   Updated: 2020/12/18 15:39:49 by jvanden-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ static char		*getreadyfornextline(char *bufferline)
 	return (newbufferline);
 }
 
-int			get_next_line(int fd, char **line)
+int				get_next_line(int fd, char **line)
 {
 	static char	*linebuffer;
 	int			returnvalue;

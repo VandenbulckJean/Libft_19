@@ -6,7 +6,7 @@
 /*   By: jvanden- <jvanden-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/01 13:21:14 by jvanden-          #+#    #+#             */
-/*   Updated: 2020/12/17 18:20:19 by jvanden-         ###   ########.fr       */
+/*   Updated: 2020/12/18 15:37:14 by jvanden-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,8 @@ static int	processing_s_zero_flag(void)
 
 static int	processing_s_precision_flag(t_fnc_data *data)
 {
-	if (data->amount_precision < (int)ft_strlen(data->string) && data->amount_precision >= 0)
+	if (data->amount_precision <
+	(int)ft_strlen(data->string) && data->amount_precision >= 0)
 		if (!(data->string = truncstr(data->string, data->amount_precision)))
 			return (-1);
 	return (1);

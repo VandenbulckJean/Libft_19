@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   libft_bonus.h                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jvanden- <jvanden-@student.s19.be>         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/12/18 15:40:11 by jvanden-          #+#    #+#             */
+/*   Updated: 2020/12/18 15:41:01 by jvanden-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef LIBFT_BONUS_H
 # define LIBFT_BONUS_H
 
@@ -7,7 +19,7 @@
 #  define BUFFER_SIZE 1024
 # endif
 
-typedef struct	s_fnc_data	{
+typedef struct		s_fnc_data	{
 	va_list	saved_variables;
 	int		iszeroascii;
 	int		writtenchars;
@@ -18,7 +30,7 @@ typedef struct	s_fnc_data	{
 	int		width;
 	char	*string;
 	char	conversion;
-}				t_fnc_data;
+}					t_fnc_data;
 
 int					newlinefound(char *linebuffer);
 int					get_next_line(int fd, char **line);
@@ -41,13 +53,15 @@ int					processing_u(t_fnc_data *data);
 int					processing_x(t_fnc_data *data);
 int					processing_cap_x(t_fnc_data *data);
 int					processing_percent(t_fnc_data *data);
-int					parsing(t_fnc_data *data, int start, int range, char *entry);
+int					parsing(t_fnc_data *data,
+					int start, int range, char *entry);
 char				*ft_itoa_pointer(unsigned long long int n,
 					int base, char *basestr);
 int					processing_d_width_flag(t_fnc_data *data, int negative);
 int					processing_d_width_zero(t_fnc_data *data, int negative);
 int					processing_d_width_minus(t_fnc_data *data, int negative);
-int					processing_d_width_precision(t_fnc_data *data, int negative);
+int					processing_d_width_precision(t_fnc_data *data,
+					int negative);
 int					processing_d_width_minus_precison(t_fnc_data *data,
 					int negative);
 int					free_string_return(t_fnc_data *data, int i);
